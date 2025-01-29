@@ -28,7 +28,7 @@
 <meta property="og:description" content="solution 1正定性:显然$||f||_{\infty}$是正定的.显然$f&#x3D;0\implies ||f||_1&#x3D;0$,故只需证明$||f||_1&#x3D;0\implies f&#x3D;0$.假设$f(x_0)\neq 0$,由于$f\in C([0,1],\mathbb{R})$,  \exists B(x_0,\delta),\forall x\in B(x_0,\delta),|f(x)|&gt;\fra">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-01-29T10:20:57.863Z">
-<meta property="article:modified_time" content="2025-01-29T14:13:17.006Z">
+<meta property="article:modified_time" content="2025-01-29T14:17:30.123Z">
 <meta property="article:author" content="Krongster">
 <meta name="twitter:card" content="summary">
 
@@ -180,7 +180,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2025-01-29 18:20:57 / 修改时间：22:13:17" itemprop="dateCreated datePublished" datetime="2025-01-29T18:20:57+08:00">2025-01-29</time>
+              <time title="创建时间：2025-01-29 18:20:57 / 修改时间：22:17:30" itemprop="dateCreated datePublished" datetime="2025-01-29T18:20:57+08:00">2025-01-29</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -205,15 +205,37 @@
       
         <h3 id="solution-1"><a href="#solution-1" class="headerlink" title="solution 1"></a>solution 1</h3><p>正定性:显然$||f||_{\infty}$是正定的.显然$f=0\implies ||f||_1=0$,故只需证明$||f||_1=0\implies f=0$.<br>假设$f(x_0)\neq 0$,由于$f\in C([0,1],\mathbb{R})$,</p>
 <script type="math/tex; mode=display">
-\exists B(x_0,\delta),\forall x\in B(x_0,\delta),|f(x)|>\frac{1}{2}|f(x_0)|>0\implies ||f||_1\geq \int_{B(x_0,\delta)}|f(x)|dx>\frac{1}{2}|f(x_0)|\delta>0</script><p>矛盾.<br><span id="more"></span><br>正齐性由积分的线性性即得.<br>三角不等式:<br>显然$||f||_{\infty}+||g||_{\infty}=\sup_t |f(t)+g(t)|\leq \sup_t|f(t)|+\sup_t|g(t)|=||f||_{\infty}+||g||_{\infty}$</p>
-<p>(b):考虑$C([0,1],\mathbb{R})$上关于$||\cdot||_{\infty}$的Cauchy列$\{f_n\}$.<br>由于$|f_n(x)-f_m(x)|\leq ||f_n-f_m||_{\infty}$,所以$\forall x\in [0,1],\{f_n(x)\}$是Cauchy列,<br>因此逐点收敛(于$f(x)$).</p>
-<p>由于$\{f_n\}$是Cauchy列,因此存在足够大的$N,\forall n&gt;N$,</p>
+\exists B(x_0,\delta),\forall x\in B(x_0,\delta),|f(x)|>\frac{1}{2}|f(x_0)|>0\implies ||f||_1\geq \int_{B(x_0,\delta)}|f(x)|dx>\frac{1}{2}|f(x_0)|\delta>0</script><p>矛盾.<br><span id="more"></span><br>正齐性由积分的线性性即得.<br>三角不等式:<br>显然$<br>$<br>||f||_{\infty}+||g||_{\infty}=\sup_t |f(t)+g(t)|\leq \sup_t|f(t)|+\sup_t|g(t)|=||f||_{\infty}+||g||_{\infty}</p>
 <script type="math/tex; mode=display">
-||f_n-f||_{\infty}\leq \limsup_{m\rightarrow \infty}||f_n-f_m||_{\infty}<\epsilon</script><p>因此$f_n$依范数(一致)收敛于$f$.由连续函数一致收敛于连续函数即得$f\in C([0,1],\mathbb{R})$.<br>故$C([0,1],\mathbb{R})$是完备的.<br>(c):反例:$f_n(x)= \left \{<br>\begin{array}{lr}<br>1-n^2x &amp; x\in [0,\frac{1}{n^2}]\\<br>0 &amp; x\in (\frac{1}{n^2},1]<br>\end{array}<br>\right.,f(x)=\left \{<br>\begin{array}{lr}<br>    1 &amp; x=0\\<br>    0 &amp; x\neq 0<br>\end{array}<br>\right.$<br>显然$\{f_n\}$是Cauchy列且</p>
+
+(b):考虑$C([0,1],\mathbb{R})$上关于$||\cdot||_{\infty}$的Cauchy列$\{f_n\}$.
+由于$|f_n(x)-f_m(x)|\leq ||f_n-f_m||_{\infty}$,所以$\forall x\in [0,1],\{f_n(x)\}$是Cauchy列,
+因此逐点收敛(于$f(x)$).
+
+由于$\{f_n\}$是Cauchy列,因此存在足够大的$N,\forall n>N$,</script><p>||f_n-f||_{\infty}\leq \limsup_{m\rightarrow \infty}||f_n-f_m||_{\infty}&lt;\epsilon</p>
 <script type="math/tex; mode=display">
-||f_n-f||_1=||f_n||_1=\frac{1}{2n^2}\rightarrow 0</script><p>但是$f\notin C([0,1],\mathbb{R})$.</p>
-<h3 id="solution-2"><a href="#solution-2" class="headerlink" title="solution 2"></a>solution 2</h3><p>(a):证明同solution 1,(a).<br>(b):这里的观察在于对于$a\notin [0,1]$,你要找一个差值多项式$\delta(x)$,使其在$[0,1]$上被控制但在$a$处任意大.注意到$(kx-\frac{k}{2})^n$就是一个很好的选择.<br>$\implies$:若$a\in [0,1]$,则显然有</p>
-<script type="math/tex; mode=display">L_a(P)-L_a(Q)=P(a)-Q(a)\leq ||P-Q||_{\infty}</script><p>故$L_a$是Lipschitz的.(显然也是连续的)<br>$\impliedby$:假设$a\notin[0,1]$,则$\forall P\in E$,$\forall \epsilon &gt;0$,$\exists k=1+\frac{1}{2|a-\frac{1}{2}|},n&gt;log_{|a-\frac{1}{2}|+\frac{1}{2}}\frac{1}{\epsilon}$.令$\delta(x)=\epsilon(kx-\frac{k}{2})^n\in E$,则</p>
+因此$f_n$依范数(一致)收敛于$f$.由连续函数一致收敛于连续函数即得$f\in C([0,1],\mathbb{R})$.
+故$C([0,1],\mathbb{R})$是完备的.
+(c):反例:$f_n(x)= \left \{
+\begin{array}{lr}
+1-n^2x & x\in [0,\frac{1}{n^2}]\\
+0 & x\in (\frac{1}{n^2},1] 
+\end{array}
+\right.,f(x)=\left \{
+\begin{array}{lr}
+    1 & x=0\\
+    0 & x\neq 0
+\end{array}
+\right.$
+显然$\{f_n\}$是Cauchy列且</script><p>||f_n-f||_1=||f_n||_1=\frac{1}{2n^2}\rightarrow 0</p>
+<script type="math/tex; mode=display">
+但是$f\notin C([0,1],\mathbb{R})$.
+
+### solution 2
+(a):证明同solution 1,(a).
+(b):这里的观察在于对于$a\notin [0,1]$,你要找一个差值多项式$\delta(x)$,使其在$[0,1]$上被控制但在$a$处任意大.注意到$(kx-\frac{k}{2})^n$就是一个很好的选择.
+$\implies$:若$a\in [0,1]$,则显然有
+$$L_a(P)-L_a(Q)=P(a)-Q(a)\leq ||P-Q||_{\infty}</script><p>故$L_a$是Lipschitz的.(显然也是连续的)<br>$\impliedby$:假设$a\notin[0,1]$,则$\forall P\in E$,$\forall \epsilon &gt;0$,$\exists k=1+\frac{1}{2|a-\frac{1}{2}|},n&gt;log_{|a-\frac{1}{2}|+\frac{1}{2}}\frac{1}{\epsilon}$.令$\delta(x)=\epsilon(kx-\frac{k}{2})^n\in E$,则</p>
 <script type="math/tex; mode=display">||\delta||_{\infty}=\epsilon |\frac{k}{2}|^n<\epsilon</script><p>且$|\delta(a)|=\epsilon k^n|a-\frac{1}{2}|^n&gt;1$.因此$\exists P+\delta$,使得</p>
 <script type="math/tex; mode=display">
 |L_a(P+\delta)-L(P)|>1,||P+\delta-P||<\epsilon</script><p>$||L_a||=\sup \frac{P(a)}{||P||_{\infty}}=1$.</p>
@@ -310,7 +332,7 @@ N(f-g)=\int_a^1x|f(x)-g(x)|dx\geq a\int_a^1|f(x)-g(x)|dx=a||f-g||_1</script><p>�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-1"><span class="nav-number">1.</span> <span class="nav-text">solution 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-2"><span class="nav-number">2.</span> <span class="nav-text">solution 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-3"><span class="nav-number">3.</span> <span class="nav-text">solution 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-4"><span class="nav-number">4.</span> <span class="nav-text">solution 4</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-1"><span class="nav-number">1.</span> <span class="nav-text">solution 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-3"><span class="nav-number">2.</span> <span class="nav-text">solution 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-4"><span class="nav-number">3.</span> <span class="nav-text">solution 4</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
