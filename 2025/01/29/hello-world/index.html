@@ -28,7 +28,7 @@
 <meta property="og:description" content="solution 1正定性:显然$||f||_{\infty}$是正定的.显然$f&#x3D;0\implies ||f||_1&#x3D;0$,故只需证明$||f||_1&#x3D;0\implies f&#x3D;0$.假设$f(x_0)\neq 0$,由于$f\in C([0,1],\mathbb{R})$,  \exists B(x_0,\delta),\forall x\in B(x_0,\delta),|f(x)|&gt;\fra">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-01-29T10:20:57.863Z">
-<meta property="article:modified_time" content="2025-01-29T14:42:45.794Z">
+<meta property="article:modified_time" content="2025-01-30T04:00:34.893Z">
 <meta property="article:author" content="Krongster">
 <meta name="twitter:card" content="summary">
 
@@ -178,10 +178,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2025-01-29 18:20:57 / 修改时间：22:42:45" itemprop="dateCreated datePublished" datetime="2025-01-29T18:20:57+08:00">2025-01-29</time>
+              <time title="创建时间：2025-01-29 18:20:57" itemprop="dateCreated datePublished" datetime="2025-01-29T18:20:57+08:00">2025-01-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-01-30 12:00:34" itemprop="dateModified" datetime="2025-01-30T12:00:34+08:00">2025-01-30</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -214,12 +220,14 @@
 <p>(c):反例:$f_n(x)= \left \{<br>\begin{array}{lr}<br>1-n^2x &amp; x\in [0,\frac{1}{n^2}]\\<br>0 &amp; x\in (\frac{1}{n^2},1]<br>\end{array}<br>\right.,f(x)=\left \{<br>\begin{array}{lr}<br>    1 &amp; x=0\\<br>    0 &amp; x\neq 0<br>\end{array}<br>\right.$<br>显然$\{f_n\}$是Cauchy列且</p>
 <script type="math/tex; mode=display">
 ||f_n-f||_1=||f_n||_1=\frac{1}{2n^2}\rightarrow 0</script><p>但是$f\notin C([0,1],\mathbb{R})$.</p>
-<h3 id="solution-2"><a href="#solution-2" class="headerlink" title="solution 2"></a>solution 2</h3><p>(a):证明同solution 1,(a).<br>(b):这里的观察在于对于$a\notin [0,1]$,你要找一个差值多项式$\delta(x)$,使其在$[0,1]$上被控制但在$a$处任意大.注意到$(kx-\frac{k}{2})^n$就是一个很好的选择.<br>$\implies$:若$a\in [0,1]$,则显然有</p>
-<script type="math/tex; mode=display">L_a(P)-L_a(Q)=P(a)-Q(a)\leq ||P-Q||_{\infty}</script><p>故$L_a$是Lipschitz的.(显然也是连续的)<br>$\impliedby$:假设$a\notin[0,1]$,则$\forall P\in E$,$\forall \epsilon &gt;0$,$\exists k=1+\frac{1}{2|a-\frac{1}{2}|},n&gt;log_{|a-\frac{1}{2}|+\frac{1}{2}}\frac{1}{\epsilon}$.令$\delta(x)=\epsilon(kx-\frac{k}{2})^n\in E$,则</p>
+<h3 id="solution-2"><a href="#solution-2" class="headerlink" title="solution 2"></a>solution 2</h3><p>(a):证明同solution 1,(a).<br>(b):这里的观察在于对于$a\notin [0,1]$,你要找一个差值多项式$\delta(x)$,使其在$[0,1]$上被控制但在$a$处任意大.注意到$(kx-\frac{k}{2})^n$就是一个很好的选择.</p>
+<p>$\implies$:若$a\in [0,1]$,则显然有</p>
+<script type="math/tex; mode=display">L_a(P)-L_a(Q)=P(a)-Q(a)\leq ||P-Q||_{\infty}</script><p>故$L_a$是Lipschitz的.(显然也是连续的)</p>
+<p>$\impliedby$:假设$a\notin[0,1]$,则$\forall P\in E$,$\forall \epsilon &gt;0$,$\exists k=1+\frac{1}{2|a-\frac{1}{2}|},n&gt;log_{|a-\frac{1}{2}|+\frac{1}{2}}\frac{1}{\epsilon}$.令$\delta(x)=\epsilon(kx-\frac{k}{2})^n\in E$,则</p>
 <script type="math/tex; mode=display">||\delta||_{\infty}=\epsilon |\frac{k}{2}|^n<\epsilon</script><p>且$|\delta(a)|=\epsilon k^n|a-\frac{1}{2}|^n&gt;1$.因此$\exists P+\delta$,使得</p>
 <script type="math/tex; mode=display">
-|L_a(P+\delta)-L(P)|>1,||P+\delta-P||<\epsilon</script><p>$||L_a||=\sup \frac{P(a)}{||P||_{\infty}}=1$.</p>
-<p>(c):<br>当$0\leq a&lt;b\leq 1$时,$L_{a,b}$显然是连续的,因为</p>
+|L_a(P+\delta)-L(P)|>1,||P+\delta-P||<\epsilon</script><p>因此$L_a$不连续.</p>
+<script type="math/tex; mode=display">||L_a||=\sup \frac{P(a)}{||P||_{\infty}}=1</script><p>(c):<br>当$0\leq a&lt;b\leq 1$时,$L_{a,b}$显然是连续的,因为</p>
 <script type="math/tex; mode=display">
 |L_{a,b}(P)-L_{a,b}(Q)|\leq (b-a)||P-Q||_{\infty}</script><p>且此时</p>
 <script type="math/tex; mode=display">
@@ -238,8 +246,35 @@
 <script type="math/tex; mode=display">
 N(f-g)=\int_a^1x|f(x)-g(x)|dx\geq a\int_a^1|f(x)-g(x)|dx=a||f-g||_1</script><p>因此</p>
 <script type="math/tex; mode=display">
-\exists \delta^{\prime}=a\delta,\forall g,s.t.N(f-g)<\delta^{\prime},g\in V\implies V\in \tau_2</script><h3 id="solution-5"><a href="#solution-5" class="headerlink" title="solution 5"></a>solution 5</h3><p>题目中并没有说明$C([0,1],\mathbb{R})$取的是什么范数(不可能是$||\cdot||_{\infty}$).因此我们先尝试取下一题中的范数$||f||=\sup_{t\in [0,1]}|f(t)|e^{-Mt}$看看行不行.</p>
-<p>我们首先证明$(C([0,1],\mathbb{R}),||\cdot||)$是一个Banach空间.</p>
+\exists \delta^{\prime}=a\delta,\forall g,s.t.N(f-g)<\delta^{\prime},g\in V\implies V\in \tau_2</script><h3 id="solution-5"><a href="#solution-5" class="headerlink" title="solution 5"></a>solution 5</h3><p>题目中并没有说明$C([0,1],\mathbb{R})$取的是什么范数(不可能是$||\cdot||_{\infty}$,因为此时$T$不是压缩映射).因此我们先尝试取下一题中的范数$||f||=\sup_{x\in [0,1]}|f(x)|e^{-Mx},M&gt;0$看看行不行.</p>
+<p>我们首先证明$(C([0,1],\mathbb{R}),||\cdot||)$是一个Banach空间.显然$||\cdot||$确实是一个范数.对于Cauchy列$\{f_n\},s.t. ||f_n-f_m||\rightarrow 0$,对于固定的$x$,$\{f_n(x)\}$是Cauchy列,因此$\{f_n\}$逐点收敛(于$f$).注意到</p>
+<script type="math/tex; mode=display">
+||f_n-f||\leq \limsup_{m\rightarrow \infty} ||f_n-f_m||<\epsilon</script><p>对于足够大的$n$成立.因此$f_n$依范数收敛于$f$.注意到这等同于一致收敛,因为$sup_x|f(x)-f_n(x)|\leq e^M||f_n-f||\rightarrow 0$.故$f\in C([0,1],\mathbb{R})$.因此这确实是一个Banach空间.</p>
+<p>下面我们证明$T(f)$是压缩映射.</p>
+<script type="math/tex; mode=display">
+||T(f)-T(g)||=\sup_{x\in [0,1]}e^{-Mx}|\int_{0}^x(f(\varphi(t))-g(\varphi(t)))dt|</script><script type="math/tex; mode=display">
+\leq \sup_{x\in[0,1]}e^{-Mx}\int_0^x|f(\varphi(t))-g(\varphi(t))|e^{-M\varphi(t)}e^{M\varphi(t)}dt\leq ||f-g||\sup_{x\in[0,1]}\int_0^xe^{M(\varphi(t)-x)}dt</script><p>我们可以看到$\lambda=\sup_{x\in[0,1]}\int_0^xe^{M(\varphi(t)-x)}dt$.为了让$\lambda&lt;1$,注意到</p>
+<script type="math/tex; mode=display">
+\int_0^xe^{M(\varphi(t)-x)}dt\leq\int_0^x e^{M(1-x)}dt=xe^{M(1-x)}</script><p>任取$0<M<1$,由于$(xe^{M(1-x)})^{\prime}=(1-Mx)e^{M(1-x)}>0,\forall x\in[0,1)$,即$xe^{M(1-x)}$在$(0,1)$上严格单调递增,而$xe^{M(1-x)}|_{x=1}=1$.因此</p>
+<script type="math/tex; mode=display">
+\sup_{x\in[0,1)}\int_0^xe^{M(\varphi(t)-x)}dt\leq \sup_{x\in[0,1)}xe^{M(1-x)}<1</script><p>当$x=1$时,由$\varphi(t)$连续且不恒等于$1$, $ \exist m(E)&gt;0,\epsilon&gt;0,\forall t\in E,\varphi(t)&lt;1-\epsilon$</p>
+<script type="math/tex; mode=display">
+\implies \int_0^1e^{M(\varphi(t)-1)}dt<(1-m(E))+m(E)e^{-M\epsilon}<1</script><p>综上当$M\in (0,1)$,$\lambda=sup_{x\in[0,1]}\int_0^xe^{M(\varphi(t)-x)}dt= max\{\sup_{x\in[0,1)},x=1\}&lt;1$</p>
+<p>因此$||T(f)-T(g)||\leq \lambda||f-g||\implies T$是压缩映射.由于我们已经证明了这是在Banach空间中发生的,因此$T$存在唯一的不动点.</p>
+<p>考虑微分方程</p>
+<script type="math/tex; mode=display">
+f(0)=\alpha,f^{\prime}(x)=f(\varphi(x))</script><p>$f$是该微分方程的解等价于</p>
+<script type="math/tex; mode=display">
+T(f)(x)=\alpha+\int_0^xf(\varphi(t))dt=f(x)</script><p>即$f$是$T$的不动点.由于$T$存在唯一不动点,因此该微分方程存在唯一解.</p>
+<h3 id="solution-6"><a href="#solution-6" class="headerlink" title="solution 6"></a>solution 6</h3><p>(a):在solution 5中已经证明了这构成一个Banach空间.</p>
+<p>(b):仿照solution 5的过程我们得到</p>
+<script type="math/tex; mode=display">||T(f)-T(g)||\leq \lambda||f-g||,\lambda=\sup_{x\in[0,1]}\int_0^xae^{M(t^b-x)}dt</script><p>由于$t\in [0,1],b&gt;1\implies t^b&lt;t$,故</p>
+<script type="math/tex; mode=display">
+\int_0^xae^{M(t^b-x)}dt<\int_0^xae^{M(t-x)}dt=\frac{a(1-e^{-Mx})}{M}</script><p>注意到$\frac{1-e^{-Mx}}{M}$单调递增$\implies \frac{1-e^{-Mx}}{M}\leq \frac{1-e^{-M}}{M}$.为了控制$\lambda<1$,让$a\frac{1-e^{-M}}{M}<1$,即让$M>a$即可.<br>此时</p>
+<script type="math/tex; mode=display">
+\lambda=sup_{x\in[0,1]}\int_0^xae^{M(t^b-x)}dt\leq\sup_{x\in[0,1]}\frac{a(1-e^{-Mx})}{M}\leq a\frac{1-e^{-M}}{M}<\frac{a}{M}<1</script><p>故此时$T$是压缩映射.</p>
+<p>(c):注意到方程有解$f$等价于$f$是$T$的不动点.故由(b)命题得证.</p>
+<h3 id="solution-7"><a href="#solution-7" class="headerlink" title="solution 7"></a>solution 7</h3><p>(a):记$P$为$E$中所有有限张成线性子空间的集合,以集合包含关系为偏序.2</p>
 
     </div>
 
@@ -317,7 +352,7 @@ N(f-g)=\int_a^1x|f(x)-g(x)|dx\geq a\int_a^1|f(x)-g(x)|dx=a||f-g||_1</script><p>�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-1"><span class="nav-number">1.</span> <span class="nav-text">solution 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-2"><span class="nav-number">2.</span> <span class="nav-text">solution 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-3"><span class="nav-number">3.</span> <span class="nav-text">solution 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-4"><span class="nav-number">4.</span> <span class="nav-text">solution 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-5"><span class="nav-number">5.</span> <span class="nav-text">solution 5</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-1"><span class="nav-number">1.</span> <span class="nav-text">solution 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-2"><span class="nav-number">2.</span> <span class="nav-text">solution 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-3"><span class="nav-number">3.</span> <span class="nav-text">solution 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-4"><span class="nav-number">4.</span> <span class="nav-text">solution 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-5"><span class="nav-number">5.</span> <span class="nav-text">solution 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-6"><span class="nav-number">6.</span> <span class="nav-text">solution 6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-7"><span class="nav-number">7.</span> <span class="nav-text">solution 7</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
