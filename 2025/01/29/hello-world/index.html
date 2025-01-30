@@ -28,7 +28,7 @@
 <meta property="og:description" content="solution 1正定性:显然$||f||_{\infty}$是正定的.显然$f&#x3D;0\implies ||f||_1&#x3D;0$,故只需证明$||f||_1&#x3D;0\implies f&#x3D;0$.假设$f(x_0)\neq 0$,由于$f\in C([0,1],\mathbb{R})$,  \exists B(x_0,\delta),\forall x\in B(x_0,\delta),|f(x)|&gt;\fra">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-01-29T10:20:57.863Z">
-<meta property="article:modified_time" content="2025-01-30T04:00:34.893Z">
+<meta property="article:modified_time" content="2025-01-30T10:35:58.112Z">
 <meta property="article:author" content="Krongster">
 <meta name="twitter:card" content="summary">
 
@@ -186,7 +186,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-01-30 12:00:34" itemprop="dateModified" datetime="2025-01-30T12:00:34+08:00">2025-01-30</time>
+                <time title="修改时间：2025-01-30 18:35:58" itemprop="dateModified" datetime="2025-01-30T18:35:58+08:00">2025-01-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -232,7 +232,8 @@
 |L_{a,b}(P)-L_{a,b}(Q)|\leq (b-a)||P-Q||_{\infty}</script><p>且此时</p>
 <script type="math/tex; mode=display">
 ||L_{a,b}||=b-a</script><p>当$a<0$或$b>1$时(不妨只考虑$a<0$,因为是完全一样的),我们可以仿照(b)中的构造,但取$a^{\prime}=\frac{a}{2}$,使得$\forall x\in [a,\frac{a}{2}]$,$|\delta(x)|>1$.此时$|L_{a,b}(P+\delta)-L_{a,b}(P)|\geq \int_{a}^{\frac{a}{2}}\delta(x)dx&gt;\frac{a}{2}$.因此$L_{a,b}$不连续.</p>
-<h3 id="solution-3"><a href="#solution-3" class="headerlink" title="solution 3"></a>solution 3</h3><h3 id="solution-4"><a href="#solution-4" class="headerlink" title="solution 4"></a>solution 4</h3><p>(a):只需验证范数需满足的性质.<br>正定性和solution 1,(a)一样.<br>正齐性由积分的线性性即得.</p>
+<h3 id="solution-3"><a href="#solution-3" class="headerlink" title="solution 3"></a>solution 3</h3><p>(a):只需证明范数需满足的性质.<br>正定性:$N(P)=||P^{\prime}||=0\iff P^{\prime}=0\iff P=0$.</p>
+<h3 id="solution-4"><a href="#solution-4" class="headerlink" title="solution 4"></a>solution 4</h3><p>(a):只需验证范数需满足的性质.<br>正定性和solution 1,(a)一样.<br>正齐性由积分的线性性即得.</p>
 <p>三角不等式:只需注意到$x|f(x)+g(x)|\leq x|f(x)|+x|g(x)|$.<br>$N\leq ||\cdot||_1$由</p>
 <script type="math/tex; mode=display">
 \int_0^1x|f(x)|dx\leq \int_0^1|f(x)|dx</script><p>即得.</p>
@@ -274,7 +275,32 @@ T(f)(x)=\alpha+\int_0^xf(\varphi(t))dt=f(x)</script><p>即$f$是$T$的不动点.
 <script type="math/tex; mode=display">
 \lambda=sup_{x\in[0,1]}\int_0^xae^{M(t^b-x)}dt\leq\sup_{x\in[0,1]}\frac{a(1-e^{-Mx})}{M}\leq a\frac{1-e^{-M}}{M}<\frac{a}{M}<1</script><p>故此时$T$是压缩映射.</p>
 <p>(c):注意到方程有解$f$等价于$f$是$T$的不动点.故由(b)命题得证.</p>
-<h3 id="solution-7"><a href="#solution-7" class="headerlink" title="solution 7"></a>solution 7</h3><p>(a):记$P$为$E$中所有有限张成线性子空间的集合,以集合包含关系为偏序.2</p>
+<h3 id="solution-7"><a href="#solution-7" class="headerlink" title="solution 7"></a>solution 7</h3><p>(a):记$P$为$E$中所有有限张成线性子空间的集合(即$P=\{V|\exists(e_i)_{i\in I},V=span_{finite}(e_i)\}$),以集合包含关系为偏序(容易验证这确实是一个偏序).对于任意升链$V_n$,取并集$V=\cup V_n$,则$V$仍然是一个有限张成子空间(基底为$\cup_n (e_i)_{i\in I_n}$),且$V$是该升链的极大元.由Zorn引理,$P$中存在极大元$I$.由于$I\in P$,由定义,$\exist (e_i)_{i\in I},s.t. I=span_{finite}(e_i)$.</p>
+<p>现在我们证明$I=E$.假设$\exists x\in E,s.t. x\notin I$,则$span\{x\}=\{\lambda x\}\in P$是一个有限张成线性子空间,但是与$I$是$P$中极大元矛盾.因此$\forall x\in E,x\in I\implies I=E$.故$(e_i)_{i\in I}$是$E$的Hamel基.</p>
+<p>（b):由于Hamel基$(e_i)_{i\in I}$至少是可数的,我们可以从中挑出一列$\{e_n\}$,构造线性泛函</p>
+<script type="math/tex; mode=display">
+T:E\rightarrow \mathbb{K},\sum a_ie_i\rightarrow \sum_{n=1}^{\infty}na_n</script><p>显然$T$是无界的,因而不是连续的.</p>
+<p>(c):由(b)我们已经找到了一个在现有拓扑下不连续的线性泛函$T$.因此我们可以定义新的范数使得$T$是连续的.这个范数诱导的拓扑肯定比原来的要强.<br>令</p>
+<script type="math/tex; mode=display">
+||x||^{\prime}=||\sum a_ie_i||^{\prime}=||x||+|Tx|</script><p>我们验证这确实是一个范数.正定性由$||x||^{\prime}=0\implies ||x||=0\implies x=0$保证.<br>正齐次性由原范数的正齐次性和$T$是线性泛函保证,即$||\lambda x||^{\prime}=||\lambda x||+|T(\lambda x)|=|\lambda|(||x||+|Tx|)$.<br>三角不等式由原范数的三角不等式和绝对值不等式保证,即</p>
+<script type="math/tex; mode=display">
+||x+y||^{\prime}=||x+y||+|Tx+Ty|\leq ||x||+||y||+|Tx|+|Ty|=||x||^{\prime}+||y||^{\prime}</script><p>由于</p>
+<script type="math/tex; mode=display">
+||x||\leq ||x||^{\prime}</script><p>因此新的范数比原来的强,并且考虑$T$在新的范数下</p>
+<script type="math/tex; mode=display">
+|Tx|=||x||^{\prime}-||x||\leq ||x||^{\prime}\implies ||T||^{\prime}\leq 1</script><p>因此$T$在新的拓扑下是连续的.这说明两个范数诱导的拓扑必然是不同的.</p>
+<h3 id="solution-8"><a href="#solution-8" class="headerlink" title="solution 8"></a>solution 8</h3><p>(a):我们只需要证明</p>
+<script type="math/tex; mode=display">
+\phi:\mathcal{L}(E)\rightarrow M^{n\times n},u\rightarrow [u]</script><p>是线性双射即可.</p>
+<h3 id="solution-9"><a href="#solution-9" class="headerlink" title="solution 9"></a>solution 9</h3><h3 id="solution-10"><a href="#solution-10" class="headerlink" title="solution 10"></a>solution 10</h3><script type="math/tex; mode=display">
+||fg||_1=\int_{\mathbb{R}}|f\frac{\chi_{[1,\infty)}}{x}|dx=\int_1^{+\infty}|\frac{f(x)}{x}|dx</script><p>由Holder不等式</p>
+<script type="math/tex; mode=display">
+\int_1^{+\infty}|\frac{f(x)}{x}|dx\leq (\int_1^{+\infty}f^2dx)^{\frac{1}{2}}(\int_1^{+\infty}\frac{dx}{x^2})^{\frac{1}{2}}=||f||_2<+\infty\implies ||fg||_1<+\infty\implies fg\in L_1(\mathbb{R})</script><p>比如$f_1=f_2=\frac{1}{\sqrt{x}}\chi_{(0,1)}\in L_1(\mathbb{R})$,但$f_1f_2=\frac{1}{x}\chi_{(0,1)}\notin L_1(\mathbb{R})$.</p>
+<h3 id="solution-11"><a href="#solution-11" class="headerlink" title="solution 11"></a>solution 11</h3><p>(a):只需证明当$||f||_q&lt;+\infty$时,$||f||_p&lt;+\infty$.注意到由Holder不等式(取共轭指数为$\frac{p}{q}+\frac{q-p}{q}=1$)</p>
+<script type="math/tex; mode=display">
+||f||_p^p=\int|f|^pd\mu\leq (\int|f|^{p\cdot \frac{q}{p}}d\mu)^{\frac{p}{q}}(\int 1 d\mu)^{\frac{q}{q-p}}=||f||_q^p(\mu(\Omega))^{\frac{q}{q-p}}</script><script type="math/tex; mode=display">
+\implies ||f||_p\leq ||f||_q(\mu(\Omega))^{\frac{q}{p(q-p)}}<+\infty</script><p>证毕.当$\mu(\Omega)=\infty$时是不成立的,因为</p>
+<p>(b):$\forall f\in L_{\infty}(\mathbb{R})$,<br>待更…</p>
 
     </div>
 
@@ -291,8 +317,8 @@ T(f)(x)=\alpha+\int_0^xf(\varphi(t))dt=f(x)</script><p>即$f$是$T$的不动点.
     <div class="post-nav">
       <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2025/01/29/sc1/" rel="next" title="作业1">
-      作业1 <i class="fa fa-chevron-right"></i>
+    <a href="/2025/01/29/sc1/" rel="next" title="物理学中的对称性与守恒量-作业1">
+      物理学中的对称性与守恒量-作业1 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -352,7 +378,7 @@ T(f)(x)=\alpha+\int_0^xf(\varphi(t))dt=f(x)</script><p>即$f$是$T$的不动点.
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-1"><span class="nav-number">1.</span> <span class="nav-text">solution 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-2"><span class="nav-number">2.</span> <span class="nav-text">solution 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-3"><span class="nav-number">3.</span> <span class="nav-text">solution 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-4"><span class="nav-number">4.</span> <span class="nav-text">solution 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-5"><span class="nav-number">5.</span> <span class="nav-text">solution 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-6"><span class="nav-number">6.</span> <span class="nav-text">solution 6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-7"><span class="nav-number">7.</span> <span class="nav-text">solution 7</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-1"><span class="nav-number">1.</span> <span class="nav-text">solution 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-2"><span class="nav-number">2.</span> <span class="nav-text">solution 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-3"><span class="nav-number">3.</span> <span class="nav-text">solution 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-4"><span class="nav-number">4.</span> <span class="nav-text">solution 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-5"><span class="nav-number">5.</span> <span class="nav-text">solution 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-6"><span class="nav-number">6.</span> <span class="nav-text">solution 6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-7"><span class="nav-number">7.</span> <span class="nav-text">solution 7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-8"><span class="nav-number">8.</span> <span class="nav-text">solution 8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-9"><span class="nav-number">9.</span> <span class="nav-text">solution 9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-10"><span class="nav-number">10.</span> <span class="nav-text">solution 10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-11"><span class="nav-number">11.</span> <span class="nav-text">solution 11</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -366,14 +392,14 @@ T(f)(x)=\alpha+\int_0^xf(\varphi(t))dt=f(x)</script><p>即$f$是$T$的不动点.
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
