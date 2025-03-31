@@ -28,7 +28,7 @@
 <meta property="og:description" content="solution 1正定性:显然$||f||_{\infty}$是正定的.显然$f&#x3D;0\implies ||f||_1&#x3D;0$,故只需证明$||f||_1&#x3D;0\implies f&#x3D;0$.假设$f(x_0)\neq 0$,由于$f\in C([0,1],\mathbb{R})$,  \exists B(x_0,\delta),\forall x\in B(x_0,\delta),|f(x)|&gt;\fra">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-01-29T10:20:57.863Z">
-<meta property="article:modified_time" content="2025-02-18T01:20:04.816Z">
+<meta property="article:modified_time" content="2025-03-06T09:11:48.477Z">
 <meta property="article:author" content="Krongster">
 <meta name="twitter:card" content="summary">
 
@@ -186,7 +186,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-02-18 09:20:04" itemprop="dateModified" datetime="2025-02-18T09:20:04+08:00">2025-02-18</time>
+                <time title="修改时间：2025-03-06 17:11:48" itemprop="dateModified" datetime="2025-03-06T17:11:48+08:00">2025-03-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -232,7 +232,19 @@
 |L_{a,b}(P)-L_{a,b}(Q)|\leq (b-a)||P-Q||_{\infty}</script><p>且此时</p>
 <script type="math/tex; mode=display">
 ||L_{a,b}||=b-a</script><p>当$a<0$或$b>1$时(不妨只考虑$a<0$,因为是完全一样的),我们可以仿照(b)中的构造,但取$a^{\prime}=\frac{a}{2}$,使得$\forall x\in [a,\frac{a}{2}]$,$|\delta(x)|>1$.此时$|L_{a,b}(P+\delta)-L_{a,b}(P)|\geq \int_{a}^{\frac{a}{2}}\delta(x)dx&gt;\frac{a}{2}$.因此$L_{a,b}$不连续.</p>
-<h3 id="solution-3"><a href="#solution-3" class="headerlink" title="solution 3"></a>solution 3</h3><p>(a):只需证明范数需满足的性质.<br>正定性:$N(P)=||P^{\prime}||=0\iff P^{\prime}=0\iff P=0$.</p>
+<h3 id="solution-3"><a href="#solution-3" class="headerlink" title="solution 3"></a>solution 3</h3><p>(a):只需证明范数需满足的性质.</p>
+<p>正定性:$N(P)=||P^{\prime}||=0\iff P^{\prime}=0\iff P=0$.</p>
+<p>正齐性:由求导的线性性即得.</p>
+<p>三角不等式:由$||\cdot||_{\infty}$的三角不等式和求导的线性性即得.</p>
+<p>显然</p>
+<script type="math/tex; mode=display">
+\forall x,|P(x)|=|\int_0^xP^\prime(t)dt|\leq \int_0^1 ||P^{\prime}||_{\infty}dt=N(P)\implies ||P||_{\infty}\leq N(P)</script><p>(b):设$P=\sum_{n\geq 1}a_nx^n$.显然有</p>
+<script type="math/tex; mode=display">
+P(x)=\int_0^x P^{\prime}(t)dt\leq N(P)x\implies L(P)\leq\int_0^1 \frac{N(P)x}{x}dx= N(P)</script><p>自然是连续的且范数为$1$,当$P=x$时取等.</p>
+<p>(c):<br>注意到$\int_0^1 \frac{1}{x}dx=+\infty$,因此我们要尽可能让$P(x)\rightarrow 1$(虽然$P(0)=0$).故取$P_n(x)=1-(1-x)^{n}=x(1+(1-x)+…+(1-x)^{n-1})$.$||P_n||_{\infty}=1$,但是</p>
+<script type="math/tex; mode=display">
+\int_0^1 \frac{P(x)}{x}dx=\sum_{i=1}^n \frac{1}{n}</script><p>当$n\rightarrow \infty$时发散,这说明$L(P)$关于$||\cdot||_{\infty}$不是连续的.</p>
+<p>(d):由(c),两者不等价.</p>
 <h3 id="solution-4"><a href="#solution-4" class="headerlink" title="solution 4"></a>solution 4</h3><p>(a):只需验证范数需满足的性质.<br>正定性和solution 1,(a)一样.<br>正齐性由积分的线性性即得.</p>
 <p>三角不等式:只需注意到$x|f(x)+g(x)|\leq x|f(x)|+x|g(x)|$.<br>$N\leq ||\cdot||_1$由</p>
 <script type="math/tex; mode=display">
@@ -258,7 +270,7 @@ N(f-g)=\int_a^1x|f(x)-g(x)|dx\geq a\int_a^1|f(x)-g(x)|dx=a||f-g||_1</script><p>�
 <script type="math/tex; mode=display">
 \int_0^xe^{M(\varphi(t)-x)}dt\leq\int_0^x e^{M(1-x)}dt=xe^{M(1-x)}</script><p>任取$0<M<1$,由于$(xe^{M(1-x)})^{\prime}=(1-Mx)e^{M(1-x)}>0,\forall x\in[0,1)$,即$xe^{M(1-x)}$在$(0,1)$上严格单调递增,而$xe^{M(1-x)}|_{x=1}=1$.因此</p>
 <script type="math/tex; mode=display">
-\sup_{x\in[0,1)}\int_0^xe^{M(\varphi(t)-x)}dt\leq \sup_{x\in[0,1)}xe^{M(1-x)}<1</script><p>当$x=1$时,由$\varphi(t)$连续且不恒等于$1$, $ \exist m(E)&gt;0,\epsilon&gt;0,\forall t\in E,\varphi(t)&lt;1-\epsilon$</p>
+\sup_{x\in[0,1)}\int_0^xe^{M(\varphi(t)-x)}dt\leq \sup_{x\in[0,1)}xe^{M(1-x)}<1</script><p>当$x=1$时,由$\varphi(t)$连续且不恒等于$1$, $\exist m(E)&gt;0,\epsilon&gt;0,\forall t\in E,\varphi(t)&lt;1-\epsilon$</p>
 <script type="math/tex; mode=display">
 \implies \int_0^1e^{M(\varphi(t)-1)}dt<(1-m(E))+m(E)e^{-M\epsilon}<1</script><p>综上当$M\in (0,1)$,$\lambda=sup_{x\in[0,1]}\int_0^xe^{M(\varphi(t)-x)}dt= max\{\sup_{x\in[0,1)},x=1\}&lt;1$</p>
 <p>因此$||T(f)-T(g)||\leq \lambda||f-g||\implies T$是压缩映射.由于我们已经证明了这是在Banach空间中发生的,因此$T$存在唯一的不动点.</p>
@@ -291,7 +303,7 @@ T:E\rightarrow \mathbb{K},\sum a_ie_i\rightarrow \sum_{n=1}^{\infty}na_n</script
 |Tx|=||x||^{\prime}-||x||\leq ||x||^{\prime}\implies ||T||^{\prime}\leq 1</script><p>因此$T$在新的拓扑下是连续的.这说明两个范数诱导的拓扑必然是不同的.</p>
 <h3 id="solution-8"><a href="#solution-8" class="headerlink" title="solution 8"></a>solution 8</h3><p>(a):我们只需要证明</p>
 <script type="math/tex; mode=display">
-\phi:\mathcal{L}(E)\rightarrow M^{n\times n},u\rightarrow [u]</script><p>是线性双射即可.</p>
+\phi:\mathcal{L}(E)\rightarrow M^{n\times n},u\rightarrow [u]</script><p>是线性双射即可.考虑$\mathcal{L}(E)\rightarrow E\rightarrow \mathbb{K}^n,u\rightarrow u(e_i)=\sum u_{ij}e_j\rightarrow (u_{ij})$是线性映射.因此$u$到$[u]$的每一列是线性映射.$[u]$是各列的直积,因此也是线性映射.</p>
 <h3 id="solution-9"><a href="#solution-9" class="headerlink" title="solution 9"></a>solution 9</h3><h3 id="solution-10"><a href="#solution-10" class="headerlink" title="solution 10"></a>solution 10</h3><script type="math/tex; mode=display">
 ||fg||_1=\int_{\mathbb{R}}|f\frac{\chi_{[1,\infty)}}{x}|dx=\int_1^{+\infty}|\frac{f(x)}{x}|dx</script><p>由Holder不等式</p>
 <script type="math/tex; mode=display">
@@ -316,10 +328,13 @@ T:E\rightarrow \mathbb{K},\sum a_ie_i\rightarrow \sum_{n=1}^{\infty}na_n</script
 <script type="math/tex; mode=display">
 \int_{\Omega_2}(\int_{\Omega_1}|f(x_1,x_2)|^{p}d\mu_1(x_1))^{\frac{q}{p}}d\mu_2(x_2)=
 \int_{\Omega_2}(\int_{\Omega_1}|f(x_1,x_2)|^{p}d\mu_1(x_1))^{\frac{q}{p}-1}(\int_{\Omega_1}|f(x_1,x_2)|^{p}d\mu_1(x_1))d\mu_2(x_2)</script><script type="math/tex; mode=display">
-=\int_{\Omega_2}(\int_{\Omega_1}|f(x_1,x_2)|^{p}d\mu_1(x_1))^{\frac{q}{p}-1}\int_{\Omega_1}|f(x_1,x_2)|^{p}d\mu_2(x_2)d\mu_1(x_1)</script><p>对$\mu_2$用Holder不等式得</p>
+=\int_{\Omega_1}(\int_{\Omega_2}(\int_{\Omega_1}|f(x_1,x_2)|^{p}d\mu_1(x_1))^{\frac{q}{p}-1}|f(x_1,x_2)|^{p}d\mu_2(x_2)d\mu_1(x_1))</script><p>对$\mu_2$用Holder不等式得</p>
 <script type="math/tex; mode=display">
-\int_{\Omega_2}(\int_{\Omega_1}|f(x_1,x_2)|^{p}d\mu_1(x_1))^{\frac{q}{p}-1}\int_{\Omega_1}|f(x_1,x_2)|^{p}d\mu_2(x_2)d\mu_1(x_1)\leq (\int_{\Omega_2}(\int_{\Omega_1}|f(x_1,x_2)|^p d\mu_1(x_1) )^{(\frac{q}{p}-1)p^\prime})^{\frac{1}{p^\prime}}
-\int_{\Omega_2}</script><h3 id="solution-14"><a href="#solution-14" class="headerlink" title="solution 14"></a>solution 14</h3><p>(a):<br>显然$T$是线性的.故我们只需证明$T$是等距同构.$\forall x\in l_p$,</p>
+\int_{\Omega_1}(\int_{\Omega_2}(\int_{\Omega_1}|f(x_1,x_2)|^{p}d\mu_1(x_1))^{\frac{q}{p}-1}|f(x_1,x_2)|^{p}d\mu_2(x_2)d\mu_1(x_1))\leq</script><script type="math/tex; mode=display">
+\int_{\Omega_1}[\int_{\Omega_2}(\int_{\Omega_1}|f(x_1,x_2)|^pd\mu_1(x_1))^{(\frac{q}{p}-1)p^\prime}d\mu_2(x_2)]^{\frac{1}{p^\prime}}[\int_{\Omega_2}|f(x_1,x_2)|^{pq^\prime}d\mu_2(x_2)]^{\frac{1}{q^\prime}}d\mu_1(x_1)</script><p>取$p^\prime=\frac{q}{q-p}$,$q^\prime=\frac{q}{p}$,那么原式化简为</p>
+<script type="math/tex; mode=display">
+\int_{\Omega_2}(\int_{\Omega_1}|f(x_1,x_2)|^{p}d\mu_1(x_1))^{\frac{q}{p}}d\mu_2(x_2)\leq [\int_{\Omega_2}(\int_{\Omega_1}|f(x_1,x_2)|^{p}d\mu_1(x_1))^{\frac{q}{p}}d\mu_2(x_2)]^{1-\frac{p}{q}}\int_{\Omega_1}(\int_{\Omega_2}|f(x_1,x_2)|^qd\mu_2(x_2))^{\frac{p}{q}}d\mu_1(x_1))</script><p>移项即得原不等式.</p>
+<h3 id="solution-14"><a href="#solution-14" class="headerlink" title="solution 14"></a>solution 14</h3><p>(a):<br>显然$T$是线性的.故我们只需证明$T$是等距同构.$\forall x\in l_p$,</p>
 <script type="math/tex; mode=display">
 ||T(x)||_p^p=\int_0^1 \sum_{n\geq 1}n(n+1)|x_n|^p\chi_{(\frac{1}{n},\frac{1}{n+1})}(t)dt=\sum_{n\geq 1}|x_n|^p=||(x_n)||_p^p</script><p>因此T是等距的.T显然是一个单射.但T不是满射.</p>
 <p>(b):<br>$S$显然是线性的.因此我们只需证明</p>
@@ -333,7 +348,17 @@ T:E\rightarrow \mathbb{K},\sum a_ie_i\rightarrow \sum_{n=1}^{\infty}na_n</script
 \sum_n (\int_{\frac{1}{n+1}}^{\frac{1}{n}} |f|^p)[\frac{1}{n(n+1)}]^{p-\frac{1}{p}}\leq \sum_n (\int_{\frac{1}{n+1}}^{\frac{1}{n}} |f|^p)=||f||_p^p< +\infty</script><p>最后一个等号由控制收敛定理以及$|f|^p\chi_{(\frac{1}{n},1)}$由$|f|^p$控制得到.</p>
 <p>证明$S\circ T$是$l_p$上的单射只需注意到</p>
 <script type="math/tex; mode=display">
-S(T(x))_n=[n(n+1)]^{\frac{1}{q}}[n(n+1)]^{\frac{1}{p}}x_n=x_n</script><h3 id="solution-15"><a href="#solution-15" class="headerlink" title="solution 15"></a>solution 15</h3><p>(a):假设$U$是$E=\{x_n\}$中的可数稠密集,$\forall \epsilon&gt;0$,$\cup_{n}B(x_n,\epsilon)=E$.</p>
+S(T(x))_n=[n(n+1)]^{\frac{1}{q}}[n(n+1)]^{\frac{1}{p}}x_n=x_n</script><h3 id="solution-15"><a href="#solution-15" class="headerlink" title="solution 15"></a>solution 15</h3><p>(a):假设$U$是$E=\{x_n\}$中的可数稠密集,$\forall \epsilon&gt;0$,$\cup_{n}B(x_n,\epsilon)=E$.$\forall x_n,s.t. B(x_n,\epsilon)\cap F\neq \empty$.任取$y_n\in B(x_n,\epsilon)\cap F$,然后把所有$y_n$收集起来($V_{\epsilon}=\{y_n\}$).此时由于$(\cup B(x_n,\epsilon),B(x_n,\epsilon)\cap F\neq \empty)=F$,因此$\forall x\in F,\exists x_n,d(x,x_n)&lt;\epsilon,d(x_n,y_n)&lt;\epsilon\implies d(x,y_n)&lt;2\epsilon$.</p>
+<p>令$V=\cup_{n=1}^{\infty}V_{\frac{1}{n}}\subseteq F$.由定义,$V$是$F$中的稠密集且显然$V$是可数的.因此$F$是$E$的可分子空间.</p>
+<p>(b):我们已经熟知$\mathbb{Q}^n$在$\mathbb{R}^n$中是稠密的,而$\mathbb{Q}^n$是可数的,因此$\mathbb{R}^n$是可分的.</p>
+<p>$c_0=\{(a_n)|\lim_{n\rightarrow\infty}a_n=0\}$中可以找到稠密子集</p>
+<script type="math/tex; mode=display">
+U=\cup_{k=1}^\infty \cup_{n=1}^\infty \{(a_1,...,a_k,\frac{1}{n},\frac{1}{n},...)|a_1\sim a_k\in \mathbb{Q}\}</script><p>这是因为$\forall a_n\in c_0$,$\exists k,n,\forall N\geq k,|a_N|&lt;\frac{1}{n}$.由$\mathbb{Q}^k$在$\mathbb{R}^k$中的稠密性,<br>存在$(b_1,…,b_k)\in \mathbb{Q}^k,||(b_k)-(a_k)||_{\infty}&lt;\frac{1}{n}$.又因$|a_N-\frac{1}{n}|&lt;\frac{2}{n}$.因此<br>存在$b=(b_1,…,b_k,\frac{1}{n},…)\in U$,</p>
+<script type="math/tex; mode=display">||b-a||_{\infty}<\frac{2}{n}</script><p>显然$U$是可数的.因此$c_0$可分.</p>
+<p>$\forall (a_n)\in l_p$,由于$\sum_{n=1}^{\infty} |a_n|^p&lt;\infty$</p>
+<p>(c):$C=\{-1,1\}^{\mathbb{N}}\in l_{\infty}$,$C$中元素是互相隔离的,并且$C$不是可数的<br>($\sum_{n=1}^{\infty} \frac{a_n+|a_n|}{2^{n+1}}$给出了$C$到$[0,1]$的满射),因此$l_{\infty}$不是可分的.</p>
+<p>令$C=\{f=\sum_{n=1}^\infty a_n\chi_{(\frac{1}{n+1},\frac{1}{n})}|a_n=0,1\}$则可得到$L_\infty(0,1)$不是可分的.</p>
+<h3 id="solution-16"><a href="#solution-16" class="headerlink" title="solution 16"></a>solution 16</h3><p>(a):第一个等号由Fubini定理直接得到.第二个定理由Lebesgue测度的平移不变性即得.</p>
 
     </div>
 
@@ -411,7 +436,7 @@ S(T(x))_n=[n(n+1)]^{\frac{1}{q}}[n(n+1)]^{\frac{1}{p}}x_n=x_n</script><h3 id="so
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-1"><span class="nav-number">1.</span> <span class="nav-text">solution 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-2"><span class="nav-number">2.</span> <span class="nav-text">solution 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-3"><span class="nav-number">3.</span> <span class="nav-text">solution 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-4"><span class="nav-number">4.</span> <span class="nav-text">solution 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-5"><span class="nav-number">5.</span> <span class="nav-text">solution 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-6"><span class="nav-number">6.</span> <span class="nav-text">solution 6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-7"><span class="nav-number">7.</span> <span class="nav-text">solution 7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-8"><span class="nav-number">8.</span> <span class="nav-text">solution 8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-9"><span class="nav-number">9.</span> <span class="nav-text">solution 9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-10"><span class="nav-number">10.</span> <span class="nav-text">solution 10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-11"><span class="nav-number">11.</span> <span class="nav-text">solution 11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-12"><span class="nav-number">12.</span> <span class="nav-text">solution 12</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-13"><span class="nav-number">13.</span> <span class="nav-text">solution 13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-14"><span class="nav-number">14.</span> <span class="nav-text">solution 14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-15"><span class="nav-number">15.</span> <span class="nav-text">solution 15</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-1"><span class="nav-number">1.</span> <span class="nav-text">solution 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-2"><span class="nav-number">2.</span> <span class="nav-text">solution 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-3"><span class="nav-number">3.</span> <span class="nav-text">solution 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-4"><span class="nav-number">4.</span> <span class="nav-text">solution 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-5"><span class="nav-number">5.</span> <span class="nav-text">solution 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-6"><span class="nav-number">6.</span> <span class="nav-text">solution 6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-7"><span class="nav-number">7.</span> <span class="nav-text">solution 7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-8"><span class="nav-number">8.</span> <span class="nav-text">solution 8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-9"><span class="nav-number">9.</span> <span class="nav-text">solution 9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-10"><span class="nav-number">10.</span> <span class="nav-text">solution 10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-11"><span class="nav-number">11.</span> <span class="nav-text">solution 11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-12"><span class="nav-number">12.</span> <span class="nav-text">solution 12</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-13"><span class="nav-number">13.</span> <span class="nav-text">solution 13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-14"><span class="nav-number">14.</span> <span class="nav-text">solution 14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-15"><span class="nav-number">15.</span> <span class="nav-text">solution 15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-16"><span class="nav-number">16.</span> <span class="nav-text">solution 16</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -425,14 +450,14 @@ S(T(x))_n=[n(n+1)]^{\frac{1}{q}}[n(n+1)]^{\frac{1}{p}}x_n=x_n</script><h3 id="so
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
